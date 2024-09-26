@@ -2,7 +2,7 @@
 
 int fibonacci(int n){//fiz recursivo pois aprendi recursividade na faculdade com esse ex em específico
 	if(n == 0)
-		return 0
+		return 0;
 	else if(n == 1)
 		return 1;
 	else
@@ -11,5 +11,21 @@ int fibonacci(int n){//fiz recursivo pois aprendi recursividade na faculdade com
 }
 
 int efibonacci(int n){
-	int i=0;
+	int num=0, fib=0;
+	while(fib<n){
+		fib = fibonacci(num);
+		if(fib == n)
+			return 1; //pert a fib
+		num++;
+	}
+	return 0;// retorna 0 se o num n pertencer a fib
+}
+
+
+int main(){
+	int num;
+	scanf("%d", &num);
+	if(efibonacci(num))
+		printf("o numero %d pertence a fib", num);
+	else printf("o numero %d nao pertence a fib");
 }
